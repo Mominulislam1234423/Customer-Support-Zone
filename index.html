@@ -27,54 +27,122 @@
   <div id="root"></div>
 
   <script type="text/babel">
+
+    const vector1 = "Assets/vector1.png";
+    const vector2 = "Assets/vector2.png";
+
     function App() {
       const [count, setCount] = React.useState(0);
 
       return (
         <div>
           <Navbar></Navbar>
+          <Banner></Banner>
         </div>
       );
+
+      // navbar section start
       function Navbar() {
         return (
           <div>
-            <div class="navbar bg-base-100 shadow-sm w-11/12 mx-auto">
-              <div class="navbar-start">
-                <div class="dropdown">
-                  <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+            <div className="navbar bg-base-100 shadow-sm w-11/12 mx-auto">
+              <div className="navbar-start">
+                <div className="dropdown">
+                  <div tabindex="0" role="button" className="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                   </div>
                   <ul
                     tabindex="-1"
-                    class="menu border-2 space-y-2 menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                    className="menu border-2 space-y-2 menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                     <a href="#"><li>Home</li></a>
-                  <a href="#"><li>FAQ</li></a>
-                  <a href="#"><li>Changelog</li></a>
-                  <a href="#"><li>Blog</li></a>
-                  <a href="#"><li>Download</li></a>
-                  <a href="#"><li>Contact</li></a>
+                    <a href="#"><li>FAQ</li></a>
+                    <a href="#"><li>Changelog</li></a>
+                    <a href="#"><li>Blog</li></a>
+                    <a href="#"><li>Download</li></a>
+                    <a href="#"><li>Contact</li></a>
                   </ul>
                 </div>
-                <a class="btn btn-ghost text-xl">CS — Ticket System</a>
+                <a className="btn btn-ghost text-xl">CS — Ticket System</a>
               </div>
-             
-              <div class="navbar-end space-x-10">
-                 <div class="hidden lg:flex">
-                <ul class="menu menu-horizontal px-1 flex gap-5">
-                  <a href="#"><li>Home</li></a>
-                  <a href="#"><li>FAQ</li></a>
-                  <a href="#"><li>Changelog</li></a>
-                  <a href="#"><li>Blog</li></a>
-                  <a href="#"><li>Download</li></a>
-                  <a href="#"><li>Contact</li></a>
-                </ul>
-              </div>
-                <a class="border-2 py-2 px-4 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white">+ New Ticket</a>
+
+              <div className="navbar-end space-x-10">
+                <div className="hidden lg:flex">
+                  <ul className="menu menu-horizontal px-1 flex gap-5">
+                    <a href="#"><li>Home</li></a>
+                    <a href="#"><li>FAQ</li></a>
+                    <a href="#"><li>Changelog</li></a>
+                    <a href="#"><li>Blog</li></a>
+                    <a href="#"><li>Download</li></a>
+                    <a href="#"><li>Contact</li></a>
+                  </ul>
+                </div>
+                <a className="border-2 py-2 px-4 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white">+ New Ticket</a>
               </div>
             </div>
           </div>
         )
       }
+      // navbar section end
+
+
+      // banner section start
+      function Banner() {
+        return (
+          <div className="w-11/12 mx-auto grid gap-5 lg:grid-cols-2 md:grid-cols-2 mt-16">
+            <div
+              className="relative w-full h-48 rounded-md overflow-hidden text-white bg-cover bg-center"
+              style={{
+                backgroundImage: `
+             linear-gradient(to right, #632EE3, #9F62F2),
+             url(${vector2})
+           `,
+              }}
+            >
+              <img
+                className="absolute left-0 bottom-0 w-1/2"
+                src={vector1}
+                alt="left vector"
+              />
+              <img
+                className="absolute right-0 bottom-0 w-1/2 scale-x-[-1]"
+                src={vector1}
+                alt="right vector"
+              />
+              <div className="relative flex flex-col items-center justify-center h-full">
+                <h2 className="text-lg">In-Progress</h2>
+                <p className="text-4xl font-bold">0</p>
+              </div>
+            </div>
+            <div
+              className="relative w-full h-48 rounded-md overflow-hidden text-white bg-cover bg-center"
+              style={{
+                backgroundImage: `
+             linear-gradient(to right, #54CF68, #00827A),
+             url(${vector2})
+           `,
+              }}
+            >
+              <img
+                className="absolute left-0 bottom-0 w-1/2"
+                src={vector1}
+                alt="left vector"
+              />
+              <img
+                className="absolute right-0 bottom-0 w-1/2 scale-x-[-1]"
+                src={vector1}
+                alt="right vector"
+              />
+              <div className="relative flex flex-col items-center justify-center h-full">
+                <h2 className="text-lg">Resolved</h2>
+                <p className="text-4xl font-bold">0</p>
+              </div>
+            </div>
+          </div>
+        );
+      }
+      // banner section end
+
+
     }
 
 
