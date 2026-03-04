@@ -1,41 +1,85 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Customer-Support-Zone</title>
 
-    <!-- React CDN -->
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <title>Customer-Support-Zone</title>
 
-  <body>
-    <div id="root"></div>
+  <!-- css link -->
+  <link rel="stylesheet" href="Style/style.css">
 
-    <script type="text/babel">
-      function App() {
-        const [count, setCount] = React.useState(0);
+  <!-- React CDN -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
+  <!-- add tailwind & daisy ui -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function App() {
+      const [count, setCount] = React.useState(0);
+
+      return (
+        <div>
+          <Navbar></Navbar>
+        </div>
+      );
+      function Navbar() {
         return (
-          <div style={{ textAlign: "center", marginTop: "50px" }}>
-            <h1>Hello React 🎉</h1>
-            <p>Count: {count}</p>
-            <button onClick={() => setCount(count + 1)}>
-              Increment
-            </button>
-            <Name></Name>
+          <div>
+            <div class="navbar bg-base-100 shadow-sm w-11/12 mx-auto">
+              <div class="navbar-start">
+                <div class="dropdown">
+                  <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                  </div>
+                  <ul
+                    tabindex="-1"
+                    class="menu border-2 space-y-2 menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                    <a href="#"><li>Home</li></a>
+                  <a href="#"><li>FAQ</li></a>
+                  <a href="#"><li>Changelog</li></a>
+                  <a href="#"><li>Blog</li></a>
+                  <a href="#"><li>Download</li></a>
+                  <a href="#"><li>Contact</li></a>
+                  </ul>
+                </div>
+                <a class="btn btn-ghost text-xl">CS — Ticket System</a>
+              </div>
+             
+              <div class="navbar-end space-x-10">
+                 <div class="hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 flex gap-5">
+                  <a href="#"><li>Home</li></a>
+                  <a href="#"><li>FAQ</li></a>
+                  <a href="#"><li>Changelog</li></a>
+                  <a href="#"><li>Blog</li></a>
+                  <a href="#"><li>Download</li></a>
+                  <a href="#"><li>Contact</li></a>
+                </ul>
+              </div>
+                <a class="border-2 py-2 px-4 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white">+ New Ticket</a>
+              </div>
+            </div>
           </div>
-        );
-      }
-
-      function Name (){
-        return(
-          <h1>SHawon</h1>
         )
       }
+    }
 
-      ReactDOM.render(<App />, document.getElementById("root"));
-    </script>
-  </body>
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+</body>
+
 </html>
