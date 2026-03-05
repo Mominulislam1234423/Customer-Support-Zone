@@ -159,18 +159,14 @@
         setSelectedTickets([...selectedTickets, t]);
       };
 
-      const handleCompleteTicket = (targetTicket) => {
-        // ১. মেইন কাস্টমার লিস্ট থেকে রিমুভ করা
-        // নিশ্চিত করুন আপনার স্টেটের নাম 'ticket' (image_936e82 অনুযায়ী)
-        const remainingAllTickets = ticket.filter((t) => t.id !== targetTicket.id);
+      const handleCompleteTicket = (tickat) => {
+        const remainingAllTickets = ticket.filter((t) => t.id !== tickat.id);
         setTicket(remainingAllTickets);
 
-        // ২. সিলেক্টেড লিস্ট থেকে রিমুভ করা
-        const remainingSelected = selectedTickets.filter((t) => t.id !== targetTicket.id);
+        const remainingSelected = selectedTickets.filter((t) => t.id !== tickat.id);
         setSelectedTickets(remainingSelected);
 
-        // ৩. রিজলভড লিস্টে যোগ করা
-        setResolvedTickets([...resolvedTickets, targetTicket]);
+        setResolvedTickets([...resolvedTickets, tickat]);
       };
 
       return (
