@@ -61,18 +61,6 @@ The purpose of this project is to practice building a **Customer Support Ticket 
 
 ---
 
-##Answer to the following question-
--1.What is JSX, and why is it used?
-JSX (JavaScript XML) হলো JavaScript এর একটি syntax যা React এ HTML এর মতো করে UI লিখতে ব্যবহার করা হয়। এটি কোডকে সহজ করে।
--2.What is the difference between State and Props?
-Props parent component থেকে data পাঠায় এবং read-only।
-State component এর নিজের data যা change করা যায়।
--3.What is the useState hook, and how does it work?
-useState React এর একটি hook যা functional component এ state manage করতে ব্যবহার হয়। এটি state value এবং state update করার function দেয়।
--4.How can you share state between components in React?
-Parent component এ state রেখে props এর মাধ্যমে child component এ পাঠিয়ে state share করা হয়।
--5.How is event handling done in React?
-React এ event handling function দিয়ে করা হয় এবং event name camelCase হয়, যেমন onClick।
 
 ## Answer to the questions:
 1) What is JSX, and why is it used?
