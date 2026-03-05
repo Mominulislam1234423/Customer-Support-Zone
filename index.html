@@ -147,8 +147,8 @@
 
 
     function App() {
-      // const [count, setCount] = React.useState(0);
       const [ticket, setTicket] = React.useState([]);
+      const [resolvedTickets, setResolvedTickets] = React.useState([]);
       React.useEffect(() => {
         setTicket(ticketsData);
       }, []);
@@ -159,12 +159,21 @@
         setSelectedTickets([...selectedTickets, t]);
       };
 
+      const handleCompleteTicket = (ticket) => {
+        const remaining = selectedTickets.filter((t) => t.id !== ticket.id);
+        setSelectedTickets(remaining);
+
+        setResolvedTickets([...resolvedTickets, ticket]);
+      };
 
       return (
         <div>
           <Navbar></Navbar>
-          <Banner selectedTickets={selectedTickets}></Banner>
+          <Banner
+            resolvedTickets={resolvedTickets}
+            selectedTickets={selectedTickets}></Banner>
           <Tickets
+            handleCompleteTicket={handleCompleteTicket}
             handleSelectTicket={handleSelectTicket}
             selectedTickets={selectedTickets}
           ></Tickets>
@@ -217,7 +226,7 @@
 
 
       // banner section start
-      function Banner({ selectedTickets }) {
+      function Banner({ selectedTickets, resolvedTickets }) {
         return (
           <div className="w-11/12 mt-8 mx-auto grid gap-5 lg:grid-cols-2 md:grid-cols-2">
             <div
@@ -265,7 +274,7 @@
               />
               <div className="relative flex flex-col items-center justify-center h-full">
                 <h2 className="text-lg">Resolved</h2>
-                <p className="text-4xl font-bold">0</p>
+                <p className="text-4xl font-bold">{resolvedTickets.length}</p>
               </div>
             </div>
           </div>
@@ -281,7 +290,10 @@
             <CustomerTickets
               handleSelectTicket={handleSelectTicket}
             ></CustomerTickets>
-            <SelactatTickets selectedTickets={selectedTickets}></SelactatTickets>
+            <SelactatTickets
+            resolvedTickets={resolvedTickets}
+              handleCompleteTicket={handleCompleteTicket}
+              selectedTickets={selectedTickets}></SelactatTickets>
           </div>
         );
       }
@@ -290,8 +302,8 @@
         const [ticket, setTicket] = React.useState([]);
 
         React.useEffect(() => {
-        setTicket(ticketsData);
-      }, []);
+          setTicket(ticketsData);
+        }, []);
         return (
           <div className="lg:w-2/3 md:w-2/3">
             <h3 className="text-xl font-bold">Customer Tickets</h3>
@@ -305,28 +317,65 @@
       }
 
       // SelactatTickets section
-      function SelactatTickets({ selectedTickets }) {
+      function SelactatTickets({
+        resolvedTickets,
+        selectedTickets,
+        handleCompleteTicket,
+      }) {
         return (
           <div className="lg:w-1/3 md:w-1/3">
+            <StatusTask
+              selectedTickets={selectedTickets}
+              handleCompleteTicket={handleCompleteTicket}
+            ></StatusTask>
+            <ResolvedTask resolvedTickets={resolvedTickets}></ResolvedTask>
+          </div>
+        );
+      }
+      // status task section
+      function StatusTask({ handleCompleteTicket, selectedTickets }) {
+        return (
+          <div>
             <h3 className="font-bold mb-4">
               Selected Tickets ({selectedTickets.length})
             </h3>
             <div className="space-y-3">
               {selectedTickets.map((t, index) => (
                 <div key={index} className="p-3 border rounded-lg shadow-sm">
-                  <h4 className="text-sm font-bold">{t.title}</h4>
-                  <button className="btn w-full bg-[#02A53B] text-white text-xs">
+                  <h4 className="text-sm font-bold mb-2">{t.title}</h4>
+                  <button
+                    onClick={() => handleCompleteTicket(t)}
+                    className="btn w-full bg-[#02A53B] text-white text-xs"
+                  >
                     Complete
                   </button>
-                  {/* <p className="text-xs text-gray-500">
-              ID: {t.id} - {t.priority}
-            </p> */}
                 </div>
               ))}
               {selectedTickets.length === 0 && (
                 <p className="text-gray-400 text-sm italic">
                   No tickets selected yet.
                 </p>
+              )}
+            </div>
+          </div>
+        );
+      }
+      // Resolved section
+      function ResolvedTask({ resolvedTickets }) {
+        return (
+          <div className="mt-8">
+            <h3 className="font-bold mb-4 text-gray-700">Resolved Task</h3>
+            <div className="space-y-2">
+              {resolvedTickets.map((t, index) => (
+                <div
+                  key={index}
+                  className="p-4 bg-blue-50 rounded-lg font-medium shadow-sm"
+                >
+                  {t.title}
+                </div>
+              ))}
+              {resolvedTickets.length === 0 && (
+                <p className="text-gray-400 italic">No tasks resolved yet.</p>
               )}
             </div>
           </div>
