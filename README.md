@@ -85,8 +85,7 @@ The purpose of this project is to practice building a **Customer Support Ticket 
 
 **Mominul**
 
-* GitHub:[ https://github.com/your-username](https://github.com/Mominulislam1234423)
-
+https://github.com/Mominulislam1234423
 ---
 
 ⭐ If you like this project, give it a **star ⭐ on GitHub**.
