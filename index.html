@@ -393,12 +393,26 @@
             >
               <div className="flex justify-between">
                 <h1 className="text-md font-bold">{ticket.title}</h1>
-                <button>{ticket.status}</button>
+                <button
+                  className={`rounded-full text-white px-2 text-xs ${ticket.status === "Open" ? "bg-[#02A53B]" : "bg-[#FEBB0C]"
+                    }`}
+                >
+                  {ticket.status}
+                </button>
               </div>
               <p className="text-xs text-gray-400">{ticket.description}</p>
               <div className="flex justify-between items-center text-xs">
                 <h6>{ticket.id}</h6>
-                <h4>{ticket.priority}</h4>
+                <h4
+                  className={`${ticket.priority === "High"
+                      ? "text-red-500"
+                      : ticket.priority === "Medium"
+                        ? "text-yellow-500"
+                        : "text-green-500"
+                    }`}
+                >
+                  {ticket.priority}
+                </h4>
                 <h5>{ticket.customerName}</h5>
                 <span>
                   <i class="fa-regular fa-calendar"></i>
@@ -410,14 +424,15 @@
         );
       }
 
+
       // Tickets section end
 
       // footer section start
       function Footer() {
         return (
-          <div className="">
-            <footer class="footer sm:footer-horizontal bg-black text-gray-300 p-10 grid grid-cols-2 md:grid-cols-1">
-              <nav className="">
+          <div className="bg-black">
+            <footer class="footer sm:footer-horizontal text-gray-300 p-10 grid grid-cols-2 lg:grid-cols-1 md:grid-cols-2">
+              <nav className="col-span-2">
                 <h6 class="footer-title">CS — Ticket System</h6>
                 <p>
                   "Empowering your business with a seamless support experience. Our
@@ -459,6 +474,9 @@
                 </a>
               </nav>
             </footer>
+            <div className="text-white text-center border-t py-4">
+              <p>© 2026 CS — Ticket System. All rights reserved.</p>
+            </div>
           </div>
         );
       }
