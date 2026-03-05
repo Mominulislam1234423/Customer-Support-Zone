@@ -159,11 +159,18 @@
         setSelectedTickets([...selectedTickets, t]);
       };
 
-      const handleCompleteTicket = (ticket) => {
-        const remaining = selectedTickets.filter((t) => t.id !== ticket.id);
-        setSelectedTickets(remaining);
+      const handleCompleteTicket = (targetTicket) => {
+        // ১. মেইন কাস্টমার লিস্ট থেকে রিমুভ করা
+        // নিশ্চিত করুন আপনার স্টেটের নাম 'ticket' (image_936e82 অনুযায়ী)
+        const remainingAllTickets = ticket.filter((t) => t.id !== targetTicket.id);
+        setTicket(remainingAllTickets);
 
-        setResolvedTickets([...resolvedTickets, ticket]);
+        // ২. সিলেক্টেড লিস্ট থেকে রিমুভ করা
+        const remainingSelected = selectedTickets.filter((t) => t.id !== targetTicket.id);
+        setSelectedTickets(remainingSelected);
+
+        // ৩. রিজলভড লিস্টে যোগ করা
+        setResolvedTickets([...resolvedTickets, targetTicket]);
       };
 
       return (
@@ -173,6 +180,7 @@
             resolvedTickets={resolvedTickets}
             selectedTickets={selectedTickets}></Banner>
           <Tickets
+            ticket={ticket}
             handleCompleteTicket={handleCompleteTicket}
             handleSelectTicket={handleSelectTicket}
             selectedTickets={selectedTickets}
@@ -284,26 +292,23 @@
       // banner section end
 
       // Tickets section start
-      function Tickets({ handleSelectTicket, selectedTickets }) {
+      function Tickets({ handleSelectTicket, selectedTickets, ticket }) {
         return (
           <div className="w-11/12 mx-auto my-8 gap-4 flex">
             <CustomerTickets
+              ticket={ticket}
               handleSelectTicket={handleSelectTicket}
             ></CustomerTickets>
             <SelactatTickets
-            resolvedTickets={resolvedTickets}
+              resolvedTickets={resolvedTickets}
               handleCompleteTicket={handleCompleteTicket}
               selectedTickets={selectedTickets}></SelactatTickets>
           </div>
         );
       }
       // CustomerTickets section
-      function CustomerTickets({ handleSelectTicket }) {
-        const [ticket, setTicket] = React.useState([]);
+      function CustomerTickets({ handleSelectTicket, ticket }) {
 
-        React.useEffect(() => {
-          setTicket(ticketsData);
-        }, []);
         return (
           <div className="lg:w-2/3 md:w-2/3">
             <h3 className="text-xl font-bold">Customer Tickets</h3>
