@@ -31,131 +31,143 @@
     const vector1 = "Assets/vector1.png";
     const vector2 = "Assets/vector2.png";
 
+
+
     // loded all json data 
     const ticketsData = [
-  {
-    "id": "#3001",
-    "title": "Login Session Expired Automatically",
-    "status": "Open",
-    "priority": "High",
-    "customerName": "Imran Hossain",
-    "description": "User gets logged out automatically within a few minutes after login.",
-    "date": "03/01/2026"
-  },
-  {
-    "id": "#3002",
-    "title": "Card Payment Declined",
-    "status": "In-Progress",
-    "priority": "High",
-    "customerName": "Sumaiya Akter",
-    "description": "Customer’s debit card payment was declined despite sufficient balance.",
-    "date": "03/02/2026"
-  },
-  {
-    "id": "#3003",
-    "title": "Unable to Change Password",
-    "status": "Open",
-    "priority": "Medium",
-    "customerName": "Rakib Hasan",
-    "description": "User receives an unknown error while trying to change account password.",
-    "date": "03/03/2026"
-  },
-  {
-    "id": "#3004",
-    "title": "Billing Address Not Updating",
-    "status": "Open",
-    "priority": "Low",
-    "customerName": "Tania Sultana",
-    "description": "Customer updated billing address but old address still appears.",
-    "date": "03/04/2026"
-  },
-  {
-    "id": "#3005",
-    "title": "Mobile App Crash on Android",
-    "status": "In-Progress",
-    "priority": "High",
-    "customerName": "Shakil Ahmed",
-    "description": "App crashes immediately after launch on Android 13 devices.",
-    "date": "03/05/2026"
-  },
-  {
-    "id": "#3006",
-    "title": "Refund Not Received",
-    "status": "Open",
-    "priority": "Medium",
-    "customerName": "Nabila Rahman",
-    "description": "Refund requested 7 days ago but not yet processed.",
-    "date": "03/06/2026"
-  },
-  {
-    "id": "#3007",
-    "title": "OTP Not Sending",
-    "status": "Open",
-    "priority": "High",
-    "customerName": "Fahim Chowdhury",
-    "description": "Customer not receiving OTP for two-factor authentication.",
-    "date": "03/07/2026"
-  },
-  {
-    "id": "#3008",
-    "title": "Subscription Renewal Failed",
-    "status": "In-Progress",
-    "priority": "Medium",
-    "customerName": "Mahi Islam",
-    "description": "Auto-renewal failed even though payment method is valid.",
-    "date": "03/08/2026"
-  },
-  {
-    "id": "#3009",
-    "title": "Invoice Email Not Delivered",
-    "status": "Open",
-    "priority": "Low",
-    "customerName": "Sabbir Khan",
-    "description": "Customer did not receive invoice email after purchase.",
-    "date": "03/09/2026"
-  },
-  {
-    "id": "#3010",
-    "title": "Profile Picture Upload Error",
-    "status": "Open",
-    "priority": "Low",
-    "customerName": "Jannat Ara",
-    "description": "User gets upload failed error while updating profile picture.",
-    "date": "03/10/2026"
-  },
-  {
-    "id": "#3011",
-    "title": "Dashboard Data Not Loading",
-    "status": "In-Progress",
-    "priority": "High",
-    "customerName": "Adnan Karim",
-    "description": "Dashboard shows blank screen after login.",
-    "date": "03/11/2026"
-  },
-  {
-    "id": "#3012",
-    "title": "Order Status Not Updating",
-    "status": "Open",
-    "priority": "Medium",
-    "customerName": "Lamia Haque",
-    "description": "Order status remains pending even after successful delivery.",
-    "date": "03/12/2026"
-  }
-]
+      {
+        "id": "#3001",
+        "title": "Login Session Expired Automatically",
+        "status": "Open",
+        "priority": "High",
+        "customerName": "Imran Hossain",
+        "description": "User gets logged out automatically within a few minutes after login.",
+        "date": "03/01/2026"
+      },
+      {
+        "id": "#3002",
+        "title": "Card Payment Declined",
+        "status": "In-Progress",
+        "priority": "High",
+        "customerName": "Sumaiya Akter",
+        "description": "Customer’s debit card payment was declined despite sufficient balance.",
+        "date": "03/02/2026"
+      },
+      {
+        "id": "#3003",
+        "title": "Unable to Change Password",
+        "status": "Open",
+        "priority": "Medium",
+        "customerName": "Rakib Hasan",
+        "description": "User receives an unknown error while trying to change account password.",
+        "date": "03/03/2026"
+      },
+      {
+        "id": "#3004",
+        "title": "Billing Address Not Updating",
+        "status": "Open",
+        "priority": "Low",
+        "customerName": "Tania Sultana",
+        "description": "Customer updated billing address but old address still appears.",
+        "date": "03/04/2026"
+      },
+      {
+        "id": "#3005",
+        "title": "Mobile App Crash on Android",
+        "status": "In-Progress",
+        "priority": "High",
+        "customerName": "Shakil Ahmed",
+        "description": "App crashes immediately after launch on Android 13 devices.",
+        "date": "03/05/2026"
+      },
+      {
+        "id": "#3006",
+        "title": "Refund Not Received",
+        "status": "Open",
+        "priority": "Medium",
+        "customerName": "Nabila Rahman",
+        "description": "Refund requested 7 days ago but not yet processed.",
+        "date": "03/06/2026"
+      },
+      {
+        "id": "#3007",
+        "title": "OTP Not Sending",
+        "status": "Open",
+        "priority": "High",
+        "customerName": "Fahim Chowdhury",
+        "description": "Customer not receiving OTP for two-factor authentication.",
+        "date": "03/07/2026"
+      },
+      {
+        "id": "#3008",
+        "title": "Subscription Renewal Failed",
+        "status": "In-Progress",
+        "priority": "Medium",
+        "customerName": "Mahi Islam",
+        "description": "Auto-renewal failed even though payment method is valid.",
+        "date": "03/08/2026"
+      },
+      {
+        "id": "#3009",
+        "title": "Invoice Email Not Delivered",
+        "status": "Open",
+        "priority": "Low",
+        "customerName": "Sabbir Khan",
+        "description": "Customer did not receive invoice email after purchase.",
+        "date": "03/09/2026"
+      },
+      {
+        "id": "#3010",
+        "title": "Profile Picture Upload Error",
+        "status": "Open",
+        "priority": "Low",
+        "customerName": "Jannat Ara",
+        "description": "User gets upload failed error while updating profile picture.",
+        "date": "03/10/2026"
+      },
+      {
+        "id": "#3011",
+        "title": "Dashboard Data Not Loading",
+        "status": "In-Progress",
+        "priority": "High",
+        "customerName": "Adnan Karim",
+        "description": "Dashboard shows blank screen after login.",
+        "date": "03/11/2026"
+      },
+      {
+        "id": "#3012",
+        "title": "Order Status Not Updating",
+        "status": "Open",
+        "priority": "Medium",
+        "customerName": "Lamia Haque",
+        "description": "Order status remains pending even after successful delivery.",
+        "date": "03/12/2026"
+      }
+    ]
 
 
     function App() {
       // const [count, setCount] = React.useState(0);
       const [ticket, setTicket] = React.useState([]);
       React.useEffect(() => {
-       setTicket(ticketsData);
+        setTicket(ticketsData);
       }, []);
+
+      const [selectedTickets, setSelectedTickets] = React.useState([]);
+
+      const handleSelectTicket = (t) => {
+        setSelectedTickets([...selectedTickets, t]);
+      };
+
 
       return (
         <div>
           <Navbar></Navbar>
-          <Banner></Banner>
-          <Tickets></Tickets>
+          <Banner selectedTickets={selectedTickets}></Banner>
+          <Tickets
+            handleSelectTicket={handleSelectTicket}
+            selectedTickets={selectedTickets}
+          ></Tickets>
           <Footer></Footer>
         </div>
       );
@@ -205,9 +217,9 @@
 
 
       // banner section start
-      function Banner() {
+      function Banner({ selectedTickets }) {
         return (
-          <div className="w-11/12 mx-auto grid grid-cols-1 gap-5 lg:grid-cols-2 mt-16">
+          <div className="w-11/12 mt-8 mx-auto grid gap-5 lg:grid-cols-2 md:grid-cols-2">
             <div
               className="relative w-full h-48 rounded-md overflow-hidden text-white bg-cover bg-center"
               style={{
@@ -229,7 +241,7 @@
               />
               <div className="relative flex flex-col items-center justify-center h-full">
                 <h2 className="text-lg">In-Progress</h2>
-                <p className="text-4xl font-bold">0</p>
+                <p className="text-4xl font-bold">{selectedTickets.length}</p>
               </div>
             </div>
             <div
@@ -259,43 +271,76 @@
           </div>
         );
       }
+
       // banner section end
 
       // Tickets section start
-      function Tickets() {
+      function Tickets({ handleSelectTicket, selectedTickets }) {
         return (
           <div className="w-11/12 mx-auto my-8 gap-4 flex">
-            <CustomerTickets></CustomerTickets>
-            <SelactatTickets></SelactatTickets>
+            <CustomerTickets
+              handleSelectTicket={handleSelectTicket}
+            ></CustomerTickets>
+            <SelactatTickets selectedTickets={selectedTickets}></SelactatTickets>
           </div>
         );
       }
       // CustomerTickets section
-      function CustomerTickets() {
+      function CustomerTickets({ handleSelectTicket }) {
+        const [ticket, setTicket] = React.useState([]);
+
+        React.useEffect(() => {
+        setTicket(ticketsData);
+      }, []);
         return (
           <div className="lg:w-2/3 md:w-2/3">
-            <h3>Customer Tickets</h3>
-            <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-              {ticket.map((ticket) => (
-                <Ticke ticket={ticket}></Ticke>
+            <h3 className="text-xl font-bold">Customer Tickets</h3>
+            <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 md:grid-cols-2">
+              {ticket.map((t) => (
+                <Ticke handleSelectTicket={handleSelectTicket} ticket={t}></Ticke>
               ))}
             </div>
           </div>
         );
       }
+
       // SelactatTickets section
-      function SelactatTickets() {
+      function SelactatTickets({ selectedTickets }) {
         return (
           <div className="lg:w-1/3 md:w-1/3">
-            <h3>SelactatTickets</h3>
+            <h3 className="font-bold mb-4">
+              Selected Tickets ({selectedTickets.length})
+            </h3>
+            <div className="space-y-3">
+              {selectedTickets.map((t, index) => (
+                <div key={index} className="p-3 border rounded-lg shadow-sm">
+                  <h4 className="text-sm font-bold">{t.title}</h4>
+                  <button className="btn w-full bg-[#02A53B] text-white text-xs">
+                    Complete
+                  </button>
+                  {/* <p className="text-xs text-gray-500">
+              ID: {t.id} - {t.priority}
+            </p> */}
+                </div>
+              ))}
+              {selectedTickets.length === 0 && (
+                <p className="text-gray-400 text-sm italic">
+                  No tickets selected yet.
+                </p>
+              )}
+            </div>
           </div>
         );
       }
+
       // ticket section start
-      function Ticke({ ticket }) {
+      function Ticke({ ticket, handleSelectTicket }) {
         return (
           <div>
-            <div className="border-2 p-2 space-y-1 rounded-md">
+            <div
+              onClick={() => handleSelectTicket(ticket)}
+              className="shadow-md cursor-pointer border p-2 space-y-1 rounded-md"
+            >
               <div className="flex justify-between">
                 <h1 className="text-md font-bold">{ticket.title}</h1>
                 <button>{ticket.status}</button>
@@ -314,65 +359,61 @@
           </div>
         );
       }
+
       // Tickets section end
 
+      // footer section start
+      function Footer() {
+        return (
+          <div className="">
+            <footer class="footer sm:footer-horizontal bg-black text-gray-300 p-10 grid grid-cols-2 md:grid-cols-1">
+              <nav className="">
+                <h6 class="footer-title">CS — Ticket System</h6>
+                <p>
+                  "Empowering your business with a seamless support experience. Our
+                  Ticket System ensures every customer query is tracked, managed, and
+                  resolved with precision and speed."
+                </p>
+              </nav>
+              <nav>
+                <h6 class="footer-title">Company</h6>
+                <a class="link link-hover">About Us</a>
+                <a class="link link-hover">Our Mission</a>
+                <a class="link link-hover">Contact Saled</a>
+              </nav>
+              <nav>
+                <h6 class="footer-title">Services</h6>
+                <a class="link link-hover">Products & Services</a>
+                <a class="link link-hover">Customer Stories</a>
+                <a class="link link-hover">Download Apps</a>
+              </nav>
+              <nav>
+                <h6 class="footer-title">Information</h6>
+                <a class="link link-hover">Privacy Policy</a>
+                <a class="link link-hover">Terms & Conditions</a>
+                <a class="link link-hover">Join Us</a>
+              </nav>
+              <nav>
+                <h6 class="footer-title">Social Links</h6>
+                <a class="link link-hover">
+                  <i class="fa-brands fa-square-x-twitter"></i>@CS — Ticket System
+                </a>
+                <a class="link link-hover">
+                  <i class="fa-brands fa-linkedin"></i>@CS — Ticket System
+                </a>
+                <a class="link link-hover">
+                  <i class="fa-brands fa-facebook"></i>@CS — Ticket System
+                </a>
+                <a class="link link-hover">
+                  <i class="fa-solid fa-envelope"></i>support@cst.com
+                </a>
+              </nav>
+            </footer>
+          </div>
+        );
+      }
 
-// footer section start
-function Footer() {
-  return (
-    <div className="">
-      <footer class="footer sm:footer-horizontal bg-black text-gray-300 p-10 grid grid-cols-2 md:grid-cols-1">
-        <nav className="">
-          <h6 class="footer-title">CS — Ticket System</h6>
-          <p>
-            "Empowering your business with a seamless support experience. Our
-            Ticket System ensures every customer query is tracked, managed, and
-            resolved with precision and speed."
-          </p>
-        </nav>
-        <nav>
-          <h6 class="footer-title">Company</h6>
-          <a class="link link-hover">About Us</a>
-          <a class="link link-hover">Our Mission</a>
-          <a class="link link-hover">Contact Saled</a>
-        </nav>
-        <nav>
-          <h6 class="footer-title">Services</h6>
-          <a class="link link-hover">Products & Services</a>
-          <a class="link link-hover">Customer Stories</a>
-          <a class="link link-hover">Download Apps</a>
-        </nav>
-        <nav>
-          <h6 class="footer-title">Information</h6>
-          <a class="link link-hover">Privacy Policy</a>
-          <a class="link link-hover">Terms & Conditions</a>
-          <a class="link link-hover">Join Us</a>
-        </nav>
-        <nav>
-          <h6 class="footer-title">Social Links</h6>
-          <a class="link link-hover">
-            <i class="fa-brands fa-square-x-twitter"></i>@CS — Ticket System
-          </a>
-          <a class="link link-hover">
-            <i class="fa-brands fa-linkedin"></i>@CS — Ticket System
-          </a>
-          <a class="link link-hover">
-            <i class="fa-brands fa-facebook"></i>@CS — Ticket System
-          </a>
-          <a class="link link-hover">
-            <i class="fa-solid fa-envelope"></i>support@cst.com
-          </a>
-        </nav>
-      </footer>
-    </div>
-  );
-}
-
-// footer section end
-
-
-
-
+      // footer section end
 
     };
 
