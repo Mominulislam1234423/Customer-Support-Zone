@@ -11,9 +11,8 @@ It helps support teams track customer issues, monitor progress, and mark tasks a
 
 ---
 
-## 📸 Project Screenshot
-
-![Customer Support Zone](./Assets/screenshot.png)
+## Screenshot
+![Customer Support Zone](Assets/Screenshot.png)
 
 ---
 
@@ -56,24 +55,6 @@ Customer-Support-Zone
 
 ---
 
-## ⚙️ How to Run This Project
-
-1️⃣ Clone the repository
-
-```
-git clone https://github.com/your-username/customer-support-zone.git
-```
-
-2️⃣ Go to the project folder
-
-```
-cd customer-support-zone
-```
-
-3️⃣ Open `index.html` in your browser
-
----
-
 ## 🎯 Project Goal
 
 The purpose of this project is to practice building a **Customer Support Ticket Dashboard** where users can manage customer issues and track the progress of support tasks.
@@ -93,13 +74,30 @@ Parent component এ state রেখে props এর মাধ্যমে child
 -5.How is event handling done in React?
 React এ event handling function দিয়ে করা হয় এবং event name camelCase হয়, যেমন onClick।
 
+## Answer to the questions:
+1) What is JSX, and why is it used?
+-  JSX (JavaScript XML) হলো JavaScript এর একটি syntax যা React এ HTML এর মতো করে UI লিখতে ব্যবহার করা হয়। এটি কোডকে সহজ করে।
+
+2) What is the difference between State and Props?
+-  Props parent component থেকে data পাঠায় এবং read-only।
+- State component এর নিজের data যা change করা যায়।
+
+3) What is the useState hook, and how does it work?
+-  useState React এর একটি hook যা functional component এ state manage করতে ব্যবহার হয়। এটি state value এবং state update করার function দেয়।
+
+4) How can you share state between components in React?
+-  Parent component এ state রেখে props এর মাধ্যমে child component এ পাঠিয়ে state share করা হয়।
+
+5) How is event handling done in React?
+- React এ event handling function দিয়ে করা হয় এবং event name camelCase হয়, যেমন onClick।
+
 ---
 
 ## 👨‍💻 Author
 
 **Mominul**
 
-* GitHub: https://github.com/your-username
+* GitHub:[ https://github.com/your-username](https://github.com/Mominulislam1234423)
 
 ---
 
